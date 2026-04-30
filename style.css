@@ -10,24 +10,22 @@ body {
 /* Header */
 header {
     position: fixed;					/* Deixa o Header fixado no topo da página*/
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 60px;
-    z-index: 100;
-    transition: 0.4s;
+    width: 100%;						/* Faz o Header cobrir toda a linha horizontal da tela */
+    display: flex;						/* Transforma o Header em flexivel*/
+    justify-content: space-between;		/* Distribui horizontalmente os elementos do menu */
+    padding: 30px 60px;					/* Espaçamento interno dos elementos em relação aos cantos do menu*/
+    z-index: 100;						/* Garante que o menu sempre esteja sobreposto aos demais elementos*/
+    transition: 0.4s;					/* Animação de entrada do elemento na tela*/
 }
 
 .logo {
-    display: flex;          /* Transforma a div em um container flexível */
-    align-items: center;    /* Alinha verticalmente a imagem e o texto no centro */
-    gap: 15px;              /* Cria um espaçamento fixo entre a imagem e o texto */
-    
-    /* Mantendo suas definições de estilo */
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: rgb(255, 240, 185); 
+    display: flex;          	/* Transforma a div em um container flexível */
+    align-items: center;    	/* Alinha verticalmente a imagem e o texto no centro */
+    gap: 15px;              	/* Cria um espaçamento fixo entre a imagem e o texto */
+    font-size: 18px;			/* Definição do tamanho da fonte*/
+    font-weight: bold;			/* Deixa a fonte em Negrito*/
+    letter-spacing: 2px;		/* Distancia entre as letras*/
+    color: rgb(255, 240, 185);	/* Definição da cor da logo*/
 }
 
 /* Ajuste fino para a imagem da logo */
@@ -38,19 +36,20 @@ header {
 }
 
 .logo span {
-    font-family: 'Passion One', sans-serif; /* Fonte pesada estilo Tonight Show */
-    font-size: 28px;
-    letter-spacing: 1px;
-    color: #f7a95e; 		/* Laranja pêssego para contraste */
+    font-family: 'Passion One', sans-serif; /* Fonte para o logo numa pegada "Tonight Show" */
+    font-size: 28px;						/* Tamanho da fonte */ 
+    letter-spacing: 1px;					/* espaçamento entre as letras */
+    color: #f7a95e; 						/* cor da logo (laranja pêssego para contraste) */
 }
 
-/* Menu do Hero */
+
+/* --- Menu do Hero ------------------------------------- */
 /* Estilo base dos links do menu */
 .nav-link-custom {
-    text-decoration: none;
-    color: #ffffff; 					/* Texto sempre branco no fundo verde */
-    font-weight: 600;
-    font-size: 16px;
+    text-decoration: none;				/* Reseta todos os padrões de estilo nativos*/
+    color: #ffffff; 					/* Cor do texto(branco) */
+    font-weight: 600;					/* Espessura da fonte(quase um negrito)*/
+    font-size: 16px;					/* Tamanho da fonte */
     padding: 8px 20px; 					/* Espaço para o fundo aparecer no hover */
     border-radius: 15px; 				/* Deixa o fundo arredondado ao aparecer */
     transition: all 0.3s ease; 			/* Transição suave */
@@ -63,7 +62,7 @@ header {
     color: rgb(55, 110, 25);   /* Fonte fica verde */
 }
 
-/* Efeito ao clicar (Ativo - conforme você pediu antes) */
+/* Efeito ao clicar (Active) */
 .nav-link-custom:active {
     background-color: #f7a95e !important; /* Fica laranja ao clicar */
     color: rgb(55, 110, 25) !important;    /* Mantém fonte verde */
