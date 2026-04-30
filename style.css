@@ -1,0 +1,203 @@
+/* Configuração Geral */
+body {
+    background-color: rgb(55, 110, 25);		/* Cor de fundo da página*/
+	color: #fff;							/* Cor base dos textos da página */
+    margin: 0;								/* Remove todas as margens da página*/
+    overflow-x: hidden;						/* Oculta Item que ultrapassam margem horizontal*/
+}
+
+/* ---------------------------------------- */
+/* Header */
+header {
+    position: fixed;					/* Deixa o Header fixado no topo da página*/
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 60px;
+    z-index: 100;
+    transition: 0.4s;
+}
+
+.logo {
+    display: flex;          /* Transforma a div em um container flexível */
+    align-items: center;    /* Alinha verticalmente a imagem e o texto no centro */
+    gap: 15px;              /* Cria um espaçamento fixo entre a imagem e o texto */
+    
+    /* Mantendo suas definições de estilo */
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgb(255, 240, 185); 
+}
+
+/* Ajuste fino para a imagem da logo */
+.logo img {
+    height: 40px;           /* Defina uma altura fixa para a logo não quebrar o header */
+    width: auto;            /* Mantém a proporção da imagem */
+    display: block;         /* Remove espaços fantasmas abaixo da imagem */
+}
+
+.logo span {
+    font-family: 'Passion One', sans-serif; /* Fonte pesada estilo Tonight Show */
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #f7a95e; 		/* Laranja pêssego para contraste */
+}
+
+/* Menu do Hero */
+/* Estilo base dos links do menu */
+.nav-link-custom {
+    text-decoration: none;
+    color: #ffffff; 					/* Texto sempre branco no fundo verde */
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 20px; 					/* Espaço para o fundo aparecer no hover */
+    border-radius: 15px; 				/* Deixa o fundo arredondado ao aparecer */
+    transition: all 0.3s ease; 			/* Transição suave */
+    background-color: transparent; 		/* Garante que começa sem fundo */
+}
+
+/* Efeito ao passar o mouse (Hover) */
+.nav-link-custom:hover {
+    background-color: #ffffff; /* Ganha fundo branco */
+    color: rgb(55, 110, 25);   /* Fonte fica verde */
+}
+
+/* Efeito ao clicar (Ativo - conforme você pediu antes) */
+.nav-link-custom:active {
+    background-color: #f7a95e !important; /* Fica laranja ao clicar */
+    color: rgb(55, 110, 25) !important;    /* Mantém fonte verde */
+}
+
+/* Ajuste do container do menu para alinhar os itens */
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre os links */
+}
+
+/* -------------------------------------------- */
+/* Estilo do Hero */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.headline {
+    font-family: 'Passion One', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem); /* Tamanho responsivo */
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.sub-headline {
+    font-family: 'Inter', sans-serif; /* Fonte limpa e técnica */
+    font-size: 1.2rem;
+    max-width: 450px;
+    opacity: 0.8;
+}
+
+/* O Botão CTA (Linha 2 do Hero) */
+.btn-cta {
+    display: inline-block;
+    padding: 18px 40px;
+    background-color: #f7a95e;
+    color: rgb(55, 110, 25);
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    transition: transform 0.3s ease;
+}
+
+.btn-cta:hover {
+    transform: scale(1.05);
+    background-color: #ffb87a;
+} 
+
+
+/* Sessão dos blends */
+.blends-section {
+    background-color: #ffffff;
+    padding: 100px 0;
+    color: rgb(55, 110, 25); /* Texto volta para o seu verde escuro */
+}
+
+.category-tag {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #f7a95e; /* Laranja do branding */
+    font-size: 14px;
+}
+
+.section-title {
+    font-family: 'Passion One', sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin-top: 10px;
+    color: rgb(55, 110, 25);
+}
+
+/* Cards de Produto */
+.blend-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.blend-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    background: #fff;
+    border-color: #f7a95e;
+}
+
+.blend-img img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.blend-info h3 {
+    font-family: 'Passion One', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.blend-info p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    height: 50px; /* Mantém o alinhamento dos textos */
+}
+
+.price {
+    display: block;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Botão de Compra dos Blends */
+.btn-buy {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: rgb(55, 110, 25); /* Fundo Verde */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.btn-buy:hover {
+    background-color: #f7a95e; /* Vira Laranja no Hover */
+    color: rgb(55, 110, 25);
+}
