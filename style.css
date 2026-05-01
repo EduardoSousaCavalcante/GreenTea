@@ -64,7 +64,7 @@ header {
 
 /* Efeito ao clicar (Active) */
 .nav-link-custom:active {
-    background-color: #f7a95e !important; /* Fica laranja ao clicar */
+    background-color: #f7a95e !important; 	/* Fica laranja ao clicar */
     color: rgb(55, 110, 25) !important;    /* Mantém fonte verde */
 }
 
@@ -72,31 +72,31 @@ header {
 .menu {
     display: flex;
     align-items: center;
-    gap: 5px; /* Espaço entre os links */
+    gap: 5px; 				/* Espaço entre os links */
 }
 
 /* -------------------------------------------- */
 /* Estilo do Hero */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 10%;
+    height: 100vh;			/* Alinha a altura pra 100% da tela de maneira flexível */
+    display: flex;			/* Transforma o display flexível a alterações */
+    align-items: center;	/* Alinhas os itens do hero ao centro horizontal */
+    padding: 0 10%;			/* Define o espaçamento interno dos itens do hero */
 }
 
 .headline {
     font-family: 'Passion One', sans-serif;
-    font-size: clamp(3rem, 8vw, 6rem); /* Tamanho responsivo */
-    line-height: 0.9;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    font-size: clamp(3rem, 8vw, 6rem);		/* Tamanho responsivo */
+    line-height: 0.9;						/* Tamanho da linha do texto */
+    text-transform: uppercase;				/* Transforma todo o texto em caixa-alta */
+    margin-bottom: 20px;					/* margem da base */
 }
 
 .sub-headline {
-    font-family: 'Inter', sans-serif; /* Fonte limpa e técnica */
-    font-size: 1.2rem;
-    max-width: 450px;
-    opacity: 0.8;
+    font-family: 'Inter', sans-serif;	/* Fonte limpa e técnica */
+    font-size: 1.2rem;					/* Tamanho da fonte */
+    max-width: 450px;					/* Tamanho máximo que a linha do texto pode ter*/					
+    opacity: 0.8;						/* Opacidade do texto */
 }
 
 /* O Botão CTA (Linha 2 do Hero) */
@@ -117,86 +117,286 @@ header {
     background-color: #ffb87a;
 } 
 
-
+/* -------------------------------------------- */
 /* Sessão dos blends */
 .blends-section {
     background-color: #ffffff;
     padding: 100px 0;
-    color: rgb(55, 110, 25); /* Texto volta para o seu verde escuro */
-}
-
-.category-tag {
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #f7a95e; /* Laranja do branding */
-    font-size: 14px;
-}
-
-.section-title {
-    font-family: 'Passion One', sans-serif;
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    margin-top: 10px;
     color: rgb(55, 110, 25);
+    overflow: hidden; /* Evita scroll na página inteira */
 }
 
-/* Cards de Produto */
-.blend-card {
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
-    transition: all 0.4s ease;
-    border: 1px solid #eee;
+/* Container do Scroll */
+.blends-horizontal-scroll {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 40px;
+    padding-right: 50px;
+    scrollbar-width: none; /* Esconde scroll no Firefox */
 }
 
-.blend-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-    background: #fff;
-    border-color: #f7a95e;
+.blends-horizontal-scroll::-webkit-scrollbar {
+    display: none; /* Esconde scroll no Chrome/Safari */
 }
 
-.blend-img img {
+/* O Card Horizontal */
+.blend-card-horizontal {
+    display: flex;
+    min-width: 750px; /* Largura fixa para manter o aspecto horizontal */
+    background-color: #f9f9f9;
+    border-radius: 4px; /* Bordas mais secas para luxo */
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+/* Lado da Imagem (50%) */
+.blend-image-half {
+    width: 50%;
+    background-color: #ececec;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.blend-image-half img {
     width: 100%;
-    max-width: 200px;
-    height: auto;
-    margin-bottom: 20px;
+    max-width: 250px;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
 }
 
-.blend-info h3 {
-    font-family: 'Passion One', sans-serif;
-    font-size: 1.8rem;
+/* Lado da Legenda (50%) */
+.blend-content-half {
+    width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+/* Detalhes do Conteúdo */
+.blend-content-half .batch {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: 0.4;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.blend-content-half .moment {
+    font-size: 11px;
+    font-weight: 800;
+    color: #f7a95e;
     margin-bottom: 10px;
 }
 
-.blend-info p {
-    font-size: 0.95rem;
-    opacity: 0.8;
-    height: 50px; /* Mantém o alinhamento dos textos */
+.blend-content-half h3 {
+    font-family: 'Passion One', sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.blend-content-half .story {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Preço e Botão */
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
 }
 
 .price {
-    display: block;
-    font-weight: 800;
-    font-size: 1.2rem;
-    margin: 20px 0;
+    font-family: 'Passion One', sans-serif;
+    font-size: 1.8rem;
 }
 
-/* Botão de Compra dos Blends */
-.btn-buy {
-    display: inline-block;
-    padding: 10px 30px;
-    background-color: rgb(55, 110, 25); /* Fundo Verde */
-    color: #fff;
+.btn-add {
+    background-color: rgb(55, 110, 25);
+    color: white;
     text-decoration: none;
+    padding: 10px 25px;
     border-radius: 50px;
     font-weight: 700;
+    font-size: 13px;
     transition: 0.3s;
 }
 
-.btn-buy:hover {
-    background-color: #f7a95e; /* Vira Laranja no Hover */
+.btn-add:hover {
+    background-color: #f7a95e;
     color: rgb(55, 110, 25);
+}
+
+.scroll-hint {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.5;
+}
+
+/* O wrapper define a altura total da rolagem lateral (ex: 300vh = 3 telas de scroll) */
+.horizontal-wrapper {
+    /* Aumentamos de 200 para 250 para dar margem de manobra ao JS */
+    height: 250vh; 
+    position: relative;
+    overflow: visible;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.scroll-track {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 200vw; /* Mantém 200 pois são 2 cards */
+    will-change: transform;
+    /* Adicionamos uma transição suave para evitar trancos ao voltar */
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.card-full {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+/* Metade Imagem */
+.card-img-half {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-half img {
+    width: 60%; /* Tamanho do mockup dentro da metade */
+    max-width: 600px;
+    filter: drop-shadow(0 30px 50px rgba(0,0,0,0.15));
+}
+
+/* Metade Texto */
+.card-text-half {
+    width: 50%;
+    height: 100%;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    color: rgb(55, 110, 25);
+}
+
+.card-text-half h3 {
+    font-family: 'Passion One', sans-serif;
+    font-size: 5rem;
+    line-height: 0.9;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.card-footer-item {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.heritage-section {
+    background-color: #fdfbf9; /* Um creme bem suave para dar calor ao design */
+    padding: 150px 0;
+    color: rgb(55, 110, 25);
+}
+
+.heritage-frame {
+    position: relative;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+/* O detalhe da moldura/borda que desloca da imagem */
+.heritage-frame::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #f7a95e;
+    z-index: 1;
+}
+
+.heritage-frame img {
+    position: relative;
+    z-index: 2;
+    filter: sepia(20%) grayscale(10%); /* Tom levemente nostálgico */
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+
+.frame-detail {
+    position: absolute;
+    bottom: 50px;
+    left: -20px;
+    background: rgb(55, 110, 25);
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 2px;
+    z-index: 3;
+    transform: rotate(-90deg);
+}
+
+.heritage-title {
+    font-family: 'Passion One', sans-serif;
+    font-size: 3.8rem;
+    line-height: 1;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.heritage-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.img-signature {
+    max-width: 150px;
+    margin-top: 30px;
+    opacity: 0.7;
+    filter: grayscale(1);
 }
