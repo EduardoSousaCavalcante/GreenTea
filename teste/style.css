@@ -1,0 +1,200 @@
+:root {
+    --grenn-tea-dark: #2d4632;
+	--grenn-tea-normal: #376e19;
+    --grenn-tea-light: #8da47e;
+	--orange-light: #fff0b9;
+	--orange-impact: #f7a95e;
+    --cream: #f9f7f2;
+    --text-color: #1a1a1a;
+	--text-color-light: #fff;
+}
+
+/* Configuração Geral */
+body {
+	background-color: var(--grenn-tea-normal);	/* Cor de fundo da página */
+    margin: 0;									/* Remove todas as margens da página */
+    padding: 0;									/* Remove o espaçamento interno da página */
+    font-family: 'Poppins', sans-serif;			/* Fonte geral da pagina */
+    background-color: var(--cream);				/* Cor do fundo da página */
+    color: var(--text-color);					/* Cor base dos textos da página */				
+    overflow-x: hidden;							/* Oculta Item que ultrapassam margem horizontal*/
+
+}
+
+/* ---------------------------------------- */
+/* Header */
+header {
+    display: flex;					/* Transforma o Header em flexivel*/
+	width: 100%;					/* Faz o Header cobrir toda a linha horizontal da tela */
+    justify-content: space-between;	/* Distribui horizontalmente os elementos do menu */
+    align-items: center;			/* Alinhas os itens ao centro horizontal */
+    padding: 20px 8%;				/* Espaçamento interno dos elementos em relação aos cantos do menu*/
+	transition: 0.4s;				/* Animação de entrada do elemento na tela*/
+	background-color: var(--grenn-tea-normal);	/* Cor de fundo da página */
+}
+
+.logo {
+    display: flex;          	/* Transforma a div em um container flexível */
+    align-items: center;    	/* Alinha verticalmente a imagem e o texto no centro */
+    gap: 15px;              	/* Cria um espaçamento fixo entre a imagem e o texto */
+    font-size: 18px;			/* Definição do tamanho da fonte*/
+    font-weight: bold;			/* Deixa a fonte em Negrito*/
+    letter-spacing: 2px;		/* Distancia entre as letras*/
+    color: var(--orange-light);	/* Definição da cor da logo*/
+}
+
+.logo img {
+    height: 40px;           /* Defina uma altura fixa para a logo não quebrar o header */
+    width: auto;            /* Mantém a proporção da imagem */
+    display: block;         /* Remove espaços fantasmas abaixo da imagem */
+}
+
+.logo span {
+    font-family: 'Passion One', sans-serif; /* Fonte para o logo numa pegada "Tonight Show" */
+    font-size: 28px;						/* Tamanho da fonte */ 
+    letter-spacing: 1px;					/* espaçamento entre as letras */
+    color: var(--orange-impact); 			/* cor da logo (laranja pêssego para contraste) */
+}
+
+
+/* --- Menu do Hero ------------------------------------- */
+/* Estilo base dos links do menu */
+.nav-link-custom {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-weight: 600;
+    font-size: 14px;
+	padding: 8px 20px; 				/* Espaço para o fundo aparecer no hover */
+    margin-left: 30px;
+	background-color: transparent; 	/* Garante que começa sem fundo */
+    transition: all 0.3s ease; 		/* Transição suave */
+}
+
+.menu .nav-link-custom:hover {
+    color: var(--green-tea-light);
+}
+
+/* -------------------------------------------- */
+/* Estilo do Hero */
+.hero {
+	background-color: var(--grenn-tea-normal);	/* Cor de fundo da página */
+	height: 100vh;			/* Alinha a altura pra 100% da tela de maneira flexível */
+    display: flex;			/* Transforma o display flexível a alterações */
+    align-items: center;	/* Alinhas os itens do hero ao centro horizontal */
+    padding: 0 10%;			/* Define o espaçamento interno dos itens do hero */
+}
+
+.hero .container {
+    display: flex;
+    align-items: center; /* Alinha verticalmente o texto e a imagem */
+    justify-content: space-between;	/* Dá espaçamento horizontal igual a todos os elementos dentro do container */
+    min-height: 80vh; /* Garante uma boa altura para o Hero */
+    padding-top: 100px; /* Espaço para o menu que agora não é fixo */
+}
+
+.hero-content {
+    flex: 1; 			/* Ocupa metade do espaço */
+    max-width: 550px;	/* Tamanho horizontal máximo do content */
+    z-index: 2;			/* Deixa o content sobreposto a imagem */
+}
+
+.hero-image {
+    flex: 1;					/* Ocupa a outra metade */
+    display: flex;				/* Deixa o display da imagem flexível */
+    justify-content: flex-end;	/* Empurra a imagem para a direita */
+    z-index: 1;					/* Deixa a imagem atrás do content */
+}
+
+.headline {
+    font-family: 'Playfair Display', serif;
+    color: var(--text-color-light);
+	font-family: 'Passion One', sans-serif;
+    font-size: clamp(3rem, 6vw, 6rem);		/* Tamanho responsivo */
+    line-height: 0.9;						/* Tamanho da linha do texto */
+    text-transform: uppercase;				/* Transforma todo o texto em caixa-alta */
+}
+
+.sub-headline {
+    max-width: 450px;
+	
+}
+
+.btn-cta {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--green-tea-dark);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: 0.4s;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: right;
+}
+
+.floating-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    /* Efeito de sombra sólida do design original da imagem f92894c662ab4df229e60e6883fb1e8d.jpg */
+    box-shadow: 25px 25px 0px var(--green-tea-light);
+}
+
+/* Rolagem Lateral (Lógica Sticky) */
+.horizontal-wrapper {
+    height: 300vh; /* Controla a velocidade do scroll lateral */
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.scroll-track {
+    display: flex;
+    width: 200vw; /* Ajustar conforme número de cards */
+    height: 100%;
+    transition: transform 0.5s ease-out;
+}
+
+.card-full {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.card-img-half {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-half img {
+    max-width: 70%;
+    border-radius: 15px;
+}
+
+.card-text-half {
+    width: 50%;
+    padding: 8%;
+}
+
+.batch { color: var(--green-tea-light); font-weight: bold; }
+.moment { font-size: 0.9rem; letter-spacing: 2px; margin: 10px 0; }
+.card-text-half h3 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--green-tea-dark); }
+.price { font-size: 1.5rem; font-weight: bold; display: block; margin-bottom: 20px; }
+.btn-cta-card {
+    padding: 12px 30px;
+    background: var(--green-tea-dark);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
